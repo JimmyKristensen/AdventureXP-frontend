@@ -41,12 +41,6 @@ ul {
   background-size: cover;
   background-position: 100% 100%;
 }
-.footer-logo {
-  margin-bottom: 30px;
-}
-.footer-logo img {
-    max-width: 200px;
-}
 .footer-text p {
   margin-bottom: 14px;
   font-size: 14px;
@@ -72,15 +66,6 @@ ul {
   text-align: center;
   line-height: 38px;
   border-radius: 50%;
-}
-.facebook-bg{
-  background: #3B5998;
-}
-.twitter-bg{
-  background: #55ACEE;
-}
-.google-bg{
-  background: #DD4B39;
 }
 .footer-widget-heading h3 {
   color: #fff;
