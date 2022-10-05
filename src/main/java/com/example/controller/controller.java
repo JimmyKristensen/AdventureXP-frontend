@@ -1,4 +1,4 @@
-package com.example.frontend.controller;
+package com.example.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,11 +11,5 @@ public class controller {
     public String index(){
         return "index";
     }
-    @GetMapping("/hej")
-    @ResponseBody
-    public String index2(){
-        return "indwlerkgne";
-    }
-
 
 }
