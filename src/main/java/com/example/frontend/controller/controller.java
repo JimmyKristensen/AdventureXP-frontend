@@ -11,11 +11,24 @@ public class controller {
     public String index(){
         return "index";
     }
-    @GetMapping("/hej")
-    @ResponseBody
-    public String index2(){
-        return "indwlerkgne";
+
+    @GetMapping("/aktiviteter")
+    public String aktiviteter(){
+        return "aktiviteter";
     }
 
+    @GetMapping("/priser")
+    public String priser(){
+        return "priser";
+    }
 
+    @GetMapping("/kontakt-os")
+    public String kontakt_os(){
+        return "kontakt-os";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
 }
