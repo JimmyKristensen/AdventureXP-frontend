@@ -1,4 +1,4 @@
-class activityRenderer{
+class ActivityRenderer{
 
     //endpoint url
     endpointURL = "http://localhost:8080/api/v1/activities/";
@@ -29,4 +29,4 @@ class activityRenderer{
         $("#activity_description").text(entry.descriptionOfActivity);
     }
 }
-var activityRenderer = new activityRenderer();
+var activityRenderer = new ActivityRenderer();

@@ -1,5 +1,7 @@
 body {
-  background-image: url('../media/Ballons.png')
+  background-image: url('../media/Ballons2.png');
+  /*background-repeat: repeat-y;
+  background-size: 100%;*/
 }
 
 ul {
@@ -193,7 +195,7 @@ ul {
 }
 
 .custom-shape-divider-bottom .shape-fill {
-  fill: #FFFFFF;
+  fill: rgb(30, 164, 165);
 }
 
 .footer-icon-heading h3 {
