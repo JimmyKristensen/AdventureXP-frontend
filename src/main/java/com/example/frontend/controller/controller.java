@@ -12,4 +12,23 @@ public class controller {
         return "index";
     }
 
+    @GetMapping("/aktiviteter")
+    public String aktiviteter(){
+        return "aktiviteter";
+    }
+
+    @GetMapping("/priser")
+    public String priser(){
+        return "priser";
+    }
+
+    @GetMapping("/kontakt-os")
+    public String kontakt_os(){
+        return "kontakt-os";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
 }
