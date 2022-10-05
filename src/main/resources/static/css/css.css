@@ -3,6 +3,11 @@ ul {
   padding: 0px;
 }
 
+.border-black{
+  border: 2px solid rgb(7, 7, 7);
+}
+
+/* FOOTER SECTION */
 .footer-section {
   background: #151414;
   position: relative;
@@ -134,34 +139,6 @@ color: #FFFFFF;
 .footer-widget ul li a {
   color: #878787;
   text-transform: capitalize;
-}
-
-.subscribe-form {
-  position: relative;
-  overflow: hidden;
-}
-
-.subscribe-form input {
-  width: 100%;
-  padding: 14px 28px;
-  background: #2E2E2E;
-  border: 1px solid #2E2E2E;
-  color: #fff;
-}
-
-.subscribe-form button {
-  position: absolute;
-  right: 0;
-  background: #ff5e14;
-  padding: 13px 20px;
-  border: 1px solid #ff5e14;
-  top: 0;
-}
-
-.subscribe-form button i {
-  color: #fff;
-  font-size: 22px;
-  transform: rotate(-6deg);
 }
 
 .copyright-area {
