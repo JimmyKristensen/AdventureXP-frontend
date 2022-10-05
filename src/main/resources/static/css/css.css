@@ -1,3 +1,7 @@
+body {
+  background-image: url('../media/Ballons.png')
+}
+
 ul {
   margin: 0px;
   padding: 0px;
@@ -221,7 +225,6 @@ ul {
 /* Card effect */
 .contenedor {
   height: 100%;
-  padding: 5% 0;
 }
 
 .container_foto {
