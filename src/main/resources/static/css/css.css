@@ -213,6 +213,24 @@ ul {
   fill: #FFFFFF;
 }
 
+.footer-icon-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.footer-icon-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+
 /** For mobile devices **/
 @media (max-width: 767px) {
   .custom-shape-divider-bottom svg {
