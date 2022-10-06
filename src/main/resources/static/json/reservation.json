@@ -1,0 +1,23 @@
+[
+    {
+        "activityId": 1,
+        "name": "John Doe",
+        "typeOfActivity": "Go Cart",
+        "durationOfActivity": 25,
+        "maxAmountOfPeople": 6
+    },
+    {
+        "activityId": 2,
+        "name": "John Doe",
+        "typeOfActivity": "Sumo Wrestling",
+        "durationOfActivity": 30,
+        "maxAmountOfPeople": 10
+    },
+    {
+        "activityId": 3,
+        "name": "John Doe",
+        "typeOfActivity": "Go Cart",
+        "durationOfActivity": 25,
+        "maxAmountOfPeople": 6
+    }
+]
