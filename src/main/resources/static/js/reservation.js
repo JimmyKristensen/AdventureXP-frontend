@@ -1,41 +1,40 @@
 'use strict'
-class ReservationRenderer{
+
+class ReservationRenderer {
 
     //endpoint url
     endpointURL = "http://localhost:8080/api/v1/reservations/";
     //constructor
-    constructor(data){
+    constructor(data) {
         this.data = data;
         this.fetchData();
     }
     //async fetch, await response then call update
-    async fetchData(){
+    async fetchData() {
         let response = await fetch(this.endpointURL);
         this.data = await response.json();
-        console.log(this.data);
+        console.table(this.data);
         this.updateUI();
     };
     //update ui elements
-    updateUI(){
+    updateUI() {
         //append data from function
-        for(let dataIndex in this.data){
+        for (let dataIndex in this.data) {
             let entry = this.data[dataIndex];
 
-            let target = $('#tb-activities')
+            let target = $('#tb-activities');
 
-            let table =  `<tr>
-            <td>${entry.activityId}</td>
-            <td>${entry.typeOfActivity}</td>
-            <td>${entry.name}</td>
-            <td>${entry.durationOfActivity}</td>
-            <td>${entry.maxAmountOfPeople}</td>
-            </tr>
-            `;
-            
+            let table = `<tr>
+                <td>${entry.activityId}</td>
+                <td>${entry.typeOfActivity}</td>
+                <td>${entry.name}</td>
+                <td>${entry.durationOfActivity}</td>
+                <td>${entry.maxAmountOfPeople}</td>
+                </tr>`;
+
             target.append(table);
 
         }
     }
-
 }
 var reservationRenderer = new ReservationRenderer();
