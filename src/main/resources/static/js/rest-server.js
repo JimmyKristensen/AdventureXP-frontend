@@ -17,6 +17,7 @@ const HTTP_PORT = parseInt(process.env.HTTP_PORT) || 8080;
 
 // Returns planets.
 app.get('/api/v1/activities', cors(), (req, res) => createResponse('../json/activity.json', res));
+app.get('/api/v1/reservations', cors(), (req, res) => createResponse('../json/reservation.json', res));
 
 /**
  * Creates a response for a given local json file. 

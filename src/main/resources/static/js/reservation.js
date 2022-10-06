@@ -1,7 +1,8 @@
-class ActivityRenderer{
+'use strict'
+class ReservationRenderer{
 
     //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/activities/";
+    endpointURL = "http://localhost:8080/api/v1/reservations/";
     //constructor
     constructor(data){
         this.data = data;
@@ -11,22 +12,30 @@ class ActivityRenderer{
     async fetchData(){
         let response = await fetch(this.endpointURL);
         this.data = await response.json();
+        console.log(this.data);
         this.updateUI();
-        console.log(this.data)
-    }
+    };
     //update ui elements
     updateUI(){
         //append data from function
         for(let dataIndex in this.data){
             let entry = this.data[dataIndex];
-            activityRenderer.setActivityData(dataIndex);
+
+            let target = $('#tb-activities')
+
+            let table =  `<tr>
+            <td>${entry.activityId}</td>
+            <td>${entry.typeOfActivity}</td>
+            <td>${entry.name}</td>
+            <td>${entry.durationOfActivity}</td>
+            <td>${entry.maxAmountOfPeople}</td>
+            </tr>
+            `;
+            
+            target.append(table);
+
         }
     }
 
-    setActivityData(index) {
-        let entry = this.data[index];
-        $("#activity_type").text(entry.typeOfActivity);
-        $("#activity_description").text(entry.descriptionOfActivity);
-    }
 }
-var activityRenderer = new ActivityRenderer();
+var reservationRenderer = new ReservationRenderer();
