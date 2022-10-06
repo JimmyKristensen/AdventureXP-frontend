@@ -13,6 +13,13 @@ ul {
   border: 2px solid rgb(7, 7, 7);
 }
 
+/*Aktiviteter images*/
+.aktImg{
+  height: 100%; 
+  width: 100%; 
+  object-fit: cover;
+}
+
 /* FOOTER SECTION */
 .footer-section {
   background: #151414;
