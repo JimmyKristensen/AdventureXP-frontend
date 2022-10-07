@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <!-- Remote stylesheets -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link media="all" href="../static/css/css.css" rel="stylesheet">
 
     <!-- Remote JavaScripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
     <script type="text/javascript" src="../static/js/activity.js"></script>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-md bg-info" style="border: 2px solid rgb(7, 7, 7);">
         <div class="container-fluid">
@@ -26,10 +28,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggler">
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../static/media/AdventureAlley.png" alt="img" width="100" height="60">
+                <a class="navbar-brand" href="./index.html">
+                    <img class="navImg" src="../static/media/AdventureAlley.png" alt="img">
                 </a>
-                <div class="navbar-nav me-auto mb-2 mb-md-0">
+                <div style="white-space: nowrap;" class="navbar-nav me-auto mb-md-0">
                     <a class="btn mx-2 my-2 btn-dark" href="../index.html">
                         Forside
                     </a>
@@ -52,36 +54,152 @@
     <div class="row">
 
         <div class="col-6">
-        <img src="../static/media/advimg.png" class="card-img-top" alt="...">
+            <img src="../static/media/advimg.png" class="card-img-top" alt="...">
+        </div>
+
+        <div class="col-6">
+            <h3 class="display-4 fw-normal">Go-kart</h3>
+            <div class="row g-4 pb-5 col-6">
+                <div class="feature col-12">
+                    <i class="bi bi-info-circle" style="font-size: 3em;"></i>
+                    <h2>Featured title</h2>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                        sentence and probably just keep going until we run out of words.</p>
+                    <p id="activity_type"></p>
+                    <p id="activity_description"></p>
+                </div>
+                <div class="feature col-12">
+                    <i class="bi bi-info-circle" style="font-size: 3em;"></i>
+                    <h2>Featured title</h2>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                        sentence and probably just keep going until we run out of words.</p>
+
+                </div>
+                <div class="feature col-12">
+                    <i class="bi bi-info-circle" style="font-size: 3em;"></i>
+                    <h2>Featured title</h2>
+                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                        sentence and probably just keep going until we run out of words.</p>
+
+                </div>
+                <a type="button" href="./reservation.html" class="w-100 btn btn-lg btn-primary">Book nu</a>
+            </div>
+        </div>
     </div>
 
-    <div class="col-6">
-        <h3 class="display-4 fw-normal">Go-kart</h3>
-        <div class="row g-4 pb-5 col-6">
-            <div class="feature col-12">
-            <i class="bi bi-info-circle" style="font-size: 3em;"></i>
-              <h2>Featured title</h2>
-              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-              <p id="activity_type"></p>
-              <p id="activity_description"></p>
-            </div>
-            <div class="feature col-12">
-                <i class="bi bi-info-circle" style="font-size: 3em;"></i>
-              <h2>Featured title</h2>
-              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-
-            </div>
-            <div class="feature col-12">
-                <i class="bi bi-info-circle" style="font-size: 3em;"></i>
-              <h2>Featured title</h2>
-              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-
-            </div>
-            <a type="button" href="./reservation.html" class="w-100 btn btn-lg btn-primary">Book nu</a>
-          </div>
-    </div>
-    
-    </div>
-    
 </body>
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="col-10">
+                                <div class="cta-text">
+                                    <h4>Find os</h4>
+                                    <span>Guldbergsgade 29N
+                                        2200 København N</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="col-10">
+                                <div class="cta-text">
+                                    <h4>Ring til os</h4>
+                                    <span>+45 46 46 02 40</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="row">
+                            <div class="col-1">
+                                <i class="fa fa-envelope-open"></i>
+                            </div>
+                            <div class="col-10">
+                                <div class="cta-text">
+                                    <h4>Mail os</h4>
+                                    <span>mail@info.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col py-3">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Brugbare Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="./index.html">Forside</a></li>
+                            <li><a href="./aktiviteter.html">aktiviteter</a></li>
+                            <li><a href="./priser.html">priser</a></li>
+                            <li><a href="./kontakt-os.html">kontakt os</a></li>
+                            <li><a href="./reservation.html">Reservationer</a></li>
+                            <li><a href="./login.html">login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col py-3">
+                    <div class="footer-widget">
+                        <div class="footer-logo d-flex justify-content-center pe-4">
+                            <a class="navbar-brand" href="./index.html">
+                                <img src="../static/media/AdventureAlley.png" alt="img" width="120" height="100">
+                            </a>
+                        </div>
+                        <div class="footer-text">
+                            <p>Her hos Adventure Alley, tilbyder vi en række af spændende aktiviteter for hele familien!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col py-3">
+                    <div class="footer-social-icon">
+                        <div class="footer-icon-heading">
+                            <h3>Følg os</h3>
+                        </div>
+                        <a href="https://www.facebook.com/KEAstudentlife/" target="_blank"><i
+                                class="bi bi-facebook facebook-bg fa-3x"></i></a>
+                        <a href="https://twitter.com/keacph/" target="_blank"><i
+                                class="fa fa-twitter twitter-bg fa-3x"></i></a>
+
+                        <a href="https://www.instagram.com/keacph/" target="_blank"><i
+                                class="fa fa-instagram instagram fa-3x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2022, All Rights Reserved <a
+                                href="https://github.com/JimmyKristensen/AdventureXP-frontend" target="_blank">Gruppe
+                                2</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </html>

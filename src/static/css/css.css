@@ -13,6 +13,50 @@ ul {
   border: 2px solid rgb(7, 7, 7);
 }
 
+.border-black-top{
+  border-top: 2px solid  rgb(7, 7, 7);
+}
+.border-black-bottom{
+  border-bottom: 2px solid  rgb(7, 7, 7);
+}
+
+.label-size {
+  max-width: 50%;
+}
+
+/*Aktiviteter boxes*/
+.aktImg{
+  height: 100%; 
+  width: 100%; 
+  object-fit: cover;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.less-rounded-end{
+  border-top-right-radius: 2px; 
+  border-bottom-right-radius: 2px;
+}
+.navImg{
+  min-width: 120px; 
+  min-height: 80px;
+  width: 120px; 
+  height: 80px;
+}
+a{
+  text-decoration: none;
+  color: #151414;
+}
+ a:hover{
+  color: #33b5e5;
+  cursor: pointer;
+ }
+
+ .aktBox {
+  width: 544px;
+  border-radius: 5px;
+ }
+
 /* FOOTER SECTION */
 .footer-section {
   background: #151414;
