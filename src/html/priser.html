@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- Remote stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link media="all" href="../static/css/css.css" rel="stylesheet">
+
+  <!-- Remote JavaScripts -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-info" style="border: 2px solid rgb(7, 7, 7);">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <a class="navbar-brand" href="./index.html">
+          <img src="../static/media/AdventureAlley.png" alt="img" width="100" height="60">
+        </a>
+        <div class="navbar-nav me-auto mb-2 mb-md-0">
+          <a class="btn mx-2 my-2 btn-dark" href="./index.html">
+            Forside
+          </a>
+          <a class="btn mx-2 my-2 btn-dark" href="./aktiviteter.html">
+            Aktiviteter
+          </a>
+          <a class="btn mx-2 my-2 btn-dark" href="./priser.html">
+            Priser
+          </a>
+          <a class="btn mx-2 my-2 btn-dark" href="./kontakt-os.html">
+            Kontakt os
+          </a>
+          <a class="btn mx-2 my-2 btn-dark" href="./login.html">
+            Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Priser</h1>
+    <p class="fs-5 text-muted">Quickly build an effective pricing table for your potential customers with this Bootstrap
+      example. It’s built with default Bootstrap components and utilities with little customization.</p>
+  </div>
+  <div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-3 text-center">
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Go-kart</h4>
+          </div>
+          <div class="card-body" style="min-height: 280px;">
+            <h1 class="card-title pricing-card-title">0 DKK</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>1 bane</li>
+              <li>Max. 6 biler</li>
+              <li>25 min. afgangen</li>
+              <li>Min. 16 år</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="w-100 btn btn-lg btn-primary">Book nu</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Minigolf</h4>
+          </div>
+          <div class="card-body" style="min-height: 280px;">
+            <h1 class="card-title pricing-card-title">50 DKK</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>1 kølle</li>
+              <li>Ingen aldersbegrænsning</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="w-100 btn btn-lg btn-primary">Book nu</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Paintball</h4>
+          </div>
+          <div class="card-body" style="min-height: 280px;">
+            <h1 class="card-title pricing-card-title">200 DKK</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>1 time</li>
+              <li>1 stor bane max. 20 personer</li>
+              <li>1 Gevær, 200 skud</li>
+              <li>Beskyttelsesudstyr inkluderet</li>
+              <li>Min. 15 år</li>
+              <li>Min. 10 personer</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="w-100 btn btn-lg btn-primary">Book nu</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Sumo Wrestling</h4>
+          </div>
+          <div class="card-body" style="min-height: 280px;">
+            <h1 class="card-title pricing-card-title">150 DKK</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>30 minutter</li>
+              <li>2 drager med til en bane</li>
+              <li>Yderlige dragter kan lejes for 50 kr.</li>
+              <li>Min. højde 120 cm</li>
+              <li>Ingen aldersbegrænsning</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="w-100 btn btn-lg btn-primary">Book nu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

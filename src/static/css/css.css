@@ -13,39 +13,6 @@ ul {
   border: 2px solid rgb(7, 7, 7);
 }
 
-/*Aktiviteter boxes*/
-.aktImg{
-  height: 100%; 
-  width: 100%; 
-  object-fit: cover;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-}
-
-.less-rounded-end{
-  border-top-right-radius: 
-  2px; border-bottom-right-radius: 2px;
-}
-.navImg{
-  min-width: 100px; 
-  min-height: 80px;
-  width: 100px; 
-  height: 80px;
-}
-a{
-  text-decoration: none;
-  color: #151414;
-}
- a:hover{
-  color: #33b5e5;
-  cursor: pointer;
- }
-
- .aktBox {
-  width: 540px;
-  border-radius: 5px;
- }
-
 /* FOOTER SECTION */
 .footer-section {
   background: #151414;

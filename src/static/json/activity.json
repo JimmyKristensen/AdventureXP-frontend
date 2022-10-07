@@ -1,14 +1,53 @@
 [
     {
         "activityId": 1,
-        "typeOfActivity": "Go Cart",
+        "typeOfActivity": "Go-Kart",
         "durationOfActivity": 25,
         "maintenanceOfActivity": 5,
         "maxAmountOfPeople": 6,
         "descriptionOfActivity": "BLABLABLA",
-        "pictureOfActivity": "advimg.png",
+        "pictureOfActivity": "gokart.png",
         "priceOfActivity": 499,
-        "minAge": "11 years",
+        "minAge": "16 years",
+        "minHeight": "150cm",
+        "restrictionsOfActivity": "No prior injuries"
+    },
+    {
+        "activityId": 2,
+        "typeOfActivity": "Minigolf",
+        "durationOfActivity": 25,
+        "maintenanceOfActivity": 5,
+        "maxAmountOfPeople": 6,
+        "descriptionOfActivity": "BLABLABLA",
+        "pictureOfActivity": "minigolf.png",
+        "priceOfActivity": 50,
+        "minAge": "None",
+        "minHeight": "150cm",
+        "restrictionsOfActivity": "No prior injuries"
+    },
+    {
+        "activityId": 3,
+        "typeOfActivity": "Paintball",
+        "durationOfActivity": 60,
+        "maintenanceOfActivity": 5,
+        "maxAmountOfPeople": 20,
+        "descriptionOfActivity": "BLABLABLA",
+        "pictureOfActivity": "paintball.png",
+        "priceOfActivity": 200,
+        "minAge": "15 years",
+        "minHeight": "150cm",
+        "restrictionsOfActivity": "No prior injuries"
+    },
+    {
+        "activityId": 4,
+        "typeOfActivity": "Sumo Wrestling",
+        "durationOfActivity": 30,
+        "maintenanceOfActivity": 5,
+        "maxAmountOfPeople": 2,
+        "descriptionOfActivity": "BLABLABLA",
+        "pictureOfActivity": "sumo.png",
+        "priceOfActivity": 150,
+        "minAge": "None",
         "minHeight": "150cm",
         "restrictionsOfActivity": "No prior injuries"
     }

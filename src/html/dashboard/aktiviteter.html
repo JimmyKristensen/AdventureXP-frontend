@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Remote JavaScripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../../static/js/dashboard/activity.js"></script>
+</head>
+
+<body>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <div class="navbar-nav">
+            <div class="nav-item text-nowrap">
+                <a class="nav-link px-3" href="#">Sign out</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-home" aria-hidden="true">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/templates/dashboard/aktiviteter.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-file" aria-hidden="true">
+                                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                    <polyline points="13 2 13 9 20 9"></polyline>
+                                </svg>
+                                Aktiviteter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/templates/dashboard/reservationer.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-shopping-cart" aria-hidden="true">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                                Reservationer
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand">
+                        <div class=""></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink">
+                        <div class=""></div>
+                    </div>
+                </div>
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-calendar" aria-hidden="true">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            This week
+                        </button>
+                    </div>
+                </div>
+
+                <h2>Aktiviteter</h2>
+                <div class="container-fluid">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-3 text-center">
+                        <div class="col">
+                            <div class="card mb-4 rounded-3 shadow-sm">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Opret ny</h4>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="w-100 btn btn-lg btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#create-activity">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-plus-circle" aria-hidden="true">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-3 text-center" id="dash-card"></div>
+                </div>
+
+                <!-- Modal Create new activity -->
+                <div class="modal fade text-light" id="create-activity">
+                    <div class="modal-dialog modal-xl">
+                        <!-- Content -->
+                        <div class="modal-content bg-dark">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Opret ny aktivitet</h4>
+                                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"></button>
+                            </div> <!-- end Modal Header -->
+                            <!-- Modal body -->
+                            <form class="form" id="formid" method="POST" enctype="multipart/form-data">
+                                <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+                                    <div class="container-fluid p-5 text-white">
+                                        <div class="row">
+                                            <div class="col m-3">
+                                                <label for="typeOfActivity" class="col">Aktivitet navn</label>
+                                                <input name="typeOfActivity" id="typeOfActivity"
+                                                    class="form-control col" type="text"></input>
+
+                                                <label for="durationOfActivity" class="col">Længden af aktiviteten
+                                                    (min.)</label>
+                                                <input name="durationOfActivity" id="durationOfActivity"
+                                                    class="form-control col" type="text"></input>
+
+                                                <label for="maxAmountOfPeople" class="col">Max. antal personer</label>
+                                                <input name="maxAmountOfPeople" id="maxAmountOfPeople"
+                                                    class="form-control col" type="text"></input>
+
+                                                <label for="minAge" class="col">aldersbegrænsning</label>
+                                                <input name="minAge" id="minAge" class="form-control col"
+                                                    type="text"></input>
+
+                                                <label for="minHeight" class="col">Højde krav</label>
+                                                <input name="minHeight" id="minHeight" class="form-control col"
+                                                    type="text"></input>
+
+                                                <label for="priceOfActivity" class="col">Pris</label>
+                                                <input name="priceOfActivity" id="priceOfActivity"
+                                                    class="form-control col" type="text"></input>
+
+                                                <label for="imagelbl" class="col">Billed</label>
+                                                <input name="imagelbl" id="fileContainer" type="file"></input>
+                                                <input type="text" id="pictureOfActivity" class="form-control col">
+                                            </div>
+                                            <!--<div class="col m-3 text-center">
+                                                <input type="submit" id="btn" value="Create"></input>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                </div> <!-- end Modal body -->
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <input class="btn btn-success" type="submit" id="btn" value="Tilføj"></input>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div> <!-- end Modal footer -->
+                            </form>
+                        </div><!-- end Content -->
+                    </div>
+                </div> <!-- end Modal Create new activity -->
+            </main>
+        </div>
+    </div>
+
+    <script src="../../static/js/dashboard/post.js"></script>
+</body>
+
+</html>
