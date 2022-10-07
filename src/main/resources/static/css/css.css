@@ -13,6 +13,17 @@ ul {
   border: 2px solid rgb(7, 7, 7);
 }
 
+.border-black-top{
+  border-top: 2px solid  rgb(7, 7, 7);
+}
+.border-black-bottom{
+  border-bottom: 2px solid  rgb(7, 7, 7);
+}
+
+.label-size {
+  max-width: 50%;
+}
+
 /*Aktiviteter boxes*/
 .aktImg{
   height: 100%; 
@@ -23,13 +34,13 @@ ul {
 }
 
 .less-rounded-end{
-  border-top-right-radius: 
-  2px; border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px; 
+  border-bottom-right-radius: 2px;
 }
 .navImg{
-  min-width: 100px; 
+  min-width: 120px; 
   min-height: 80px;
-  width: 100px; 
+  width: 120px; 
   height: 80px;
 }
 a{
@@ -42,7 +53,7 @@ a{
  }
 
  .aktBox {
-  width: 540px;
+  width: 544px;
   border-radius: 5px;
  }
 
