@@ -3,7 +3,8 @@
 class ReservationRenderer {
 
     //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/reservations/";
+    //endpointURL = "http://localhost:8080/api/v1/reservations/";
+    endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/reservations/";
     //constructor
     constructor(data) {
         this.data = data;
