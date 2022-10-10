@@ -1,6 +1,7 @@
 'use strict'
 
 class ReservationRenderer {
+
     //endpoint url
     endpointURL = "http://localhost:8080/api/v1/reservations/";
     //constructor
@@ -29,11 +30,15 @@ class ReservationRenderer {
                 <td>${entry.name}</td>
                 <td>${entry.durationOfActivity}</td>
                 <td>${entry.maxAmountOfPeople}</td>
+                <td>
+                <a class="btn sm">Edit</a>
+                <a class="btn sm">Delete</a>
+                </td>
                 </tr>`;
 
             target.append(table);
 
-        };
-    };
+        }
+    }
 }
 var reservationRenderer = new ReservationRenderer();
