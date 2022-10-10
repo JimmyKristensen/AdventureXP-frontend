@@ -7,7 +7,7 @@ class ReservationRenderer {
     endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/reservations/";
     //constructor
     constructor(data) {
-        this.data = data;
+        this.data = data;g
         this.fetchData();
     }
     //async fetch, await response then call update
