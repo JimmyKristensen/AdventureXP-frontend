@@ -268,6 +268,13 @@ a{
   }
 }
 
+/* Fontpage card style */
+.fontpage-card-style {
+  min-width: 275px; 
+  min-height: 170px; 
+  object-fit: cover;
+}
+
 /* Card effect */
 .container_foto {
   background-color: rgba(255, 193, 7, 1);
