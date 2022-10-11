@@ -3,8 +3,8 @@
 class ActivityRenderer {
 
     //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/activities/";
-    //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities";
+    //endpointURL = "http://localhost:8080/api/v1/activities/";
+    endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities";
     //constructor
     constructor(data) {
         this.data = data;
