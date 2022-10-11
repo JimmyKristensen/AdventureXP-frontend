@@ -29,7 +29,7 @@ class FrontpageActivityRenderer{
                 <div class="col d-flex justify-center">
                     <div class="card h-100 container_foto">
                         <a href="html/aktivitet.html">
-                            <img src="../static/media/${entry.pictureOfActivity}" class="card-img-top" alt="..." height="150">
+                            <img src="../static/media/${entry.pictureOfActivity}" class="card-img-top fontpage-card-style" alt="...">
                             <div class="ver_mas text-center">
                                 <span class="bi bi-info-circle d-flex align-self-center justify-center"></span>
                             </div>

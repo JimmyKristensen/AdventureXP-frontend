@@ -8,6 +8,8 @@
     <title>Document</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../static/css/dashboard-style.css">
     <!-- Remote JavaScripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
@@ -129,79 +131,199 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-3 text-center" id="dash-card"></div>
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 mt-3 text-center" id="dash-card"></div>
                 </div>
-
-                <!-- Modal Create new activity -->
-                <div class="modal fade text-light" id="create-activity">
-                    <div class="modal-dialog modal-xl">
-                        <!-- Content -->
-                        <div class="modal-content bg-dark">
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Opret ny aktivitet</h4>
-                                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"></button>
-                            </div> <!-- end Modal Header -->
-                            <!-- Modal body -->
-                            <form class="form" id="formid" method="POST" enctype="multipart/form-data">
-                                <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
-                                    <div class="container-fluid p-5 text-white">
-                                        <div class="row">
-                                            <div class="col m-3">
-                                                <label for="typeOfActivity" class="col">Aktivitet navn</label>
-                                                <input name="typeOfActivity" id="typeOfActivity"
-                                                    class="form-control col" type="text"></input>
-
-                                                <label for="durationOfActivity" class="col">Længden af aktiviteten
-                                                    (min.)</label>
-                                                <input name="durationOfActivity" id="durationOfActivity"
-                                                    class="form-control col" type="text"></input>
-
-                                                <label for="maxAmountOfPeople" class="col">Max. antal personer</label>
-                                                <input name="maxAmountOfPeople" id="maxAmountOfPeople"
-                                                    class="form-control col" type="text"></input>
-
-                                                <label for="minAge" class="col">aldersbegrænsning</label>
-                                                <input name="minAge" id="minAge" class="form-control col"
-                                                    type="text"></input>
-
-                                                <label for="minHeight" class="col">Højde krav</label>
-                                                <input name="minHeight" id="minHeight" class="form-control col"
-                                                    type="text"></input>
-
-                                                <label for="priceOfActivity" class="col">Pris</label>
-                                                <input name="priceOfActivity" id="priceOfActivity"
-                                                    class="form-control col" type="text"></input>
-
-                                                <label for="pictureOfActivity" class="col">Billed</label>
-                                                <input name="pictureOfActivity" id="pictureOfActivity"
-                                                    class="form-control col" type="text"></input>
-
-                                                <!--<label for="imagelbl" class="col">Billed</label>
-                                                <input name="imagelbl" id="fileContainer" type="file"></input>
-                                                <input type="text" id="pictureOfActivity" class="form-control col">-->
-                                            </div>
-                                            <!--<div class="col m-3 text-center">
-                                                <input type="submit" id="btn" value="Create"></input>
-                                            </div>-->
-                                        </div>
-                                    </div>
-                                </div> <!-- end Modal body -->
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <input class="btn btn-success" type="submit" id="btn" value="Tilføj"></input>
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div> <!-- end Modal footer -->
-                            </form>
-                        </div><!-- end Content -->
-                    </div>
-                </div> <!-- end Modal Create new activity -->
             </main>
         </div>
     </div>
 
-    <script src="../../static/js/dashboard/post.js"></script>
+    <!-- Modal Create new activity -->
+    <div class="modal fade text-light" id="create-activity">
+        <div class="modal-dialog modal-xl">
+            <!-- Content -->
+            <div class="modal-content bg-dark">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Opret ny aktivitet</h4>
+                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"></button>
+                </div> <!-- end Modal Header -->
+                <!-- Modal body -->
+                <form class="form" id="formPost" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+                        <div class="container-fluid p-5 text-white">
+                            <div class="row">
+                                <div class="col m-3">
+                                    <label for="typeOfActivity" class="col">Aktivitet navn</label>
+                                    <input name="typeOfActivity" id="typeOfActivity" class="form-control col"
+                                        type="text">
+                                    </input>
+
+                                    <label for="durationOfActivity" class="col">Længden af aktiviteten
+                                        (min.)</label>
+                                    <input name="durationOfActivity" id="durationOfActivity" class="form-control col"
+                                        type="text">
+                                    </input>
+
+                                    <label for="maxAmountOfPeople" class="col">Max. antal personer</label>
+                                    <input name="maxAmountOfPeople" id="maxAmountOfPeople" class="form-control col"
+                                        type="text">
+                                    </input>
+
+                                    <label for="minAge" class="col">aldersbegrænsning</label>
+                                    <input name="minAge" id="minAge" class="form-control col" type="text">
+                                    </input>
+
+                                    <label for="minHeight" class="col">Højde krav</label>
+                                    <input name="minHeight" id="minHeight" class="form-control col" type="text">
+                                    </input>
+
+                                    <label for="priceOfActivity" class="col">Pris</label>
+                                    <input name="priceOfActivity" id="priceOfActivity" class="form-control col"
+                                        type="text">
+                                    </input>
+
+                                    <!-- Image choice -->
+                                    <div class="container-fluid px-0">
+                                        <label>Vælg billed</label>
+                                        <div class="row row-cols-2">
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="pictureOfActivity" id="pictureOfActivity" checked
+                                                    value="gokart.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/gokart.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="pictureOfActivity"
+                                                    value="minigolf.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/minigolf.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="pictureOfActivity"
+                                                    value="paintball.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/paintball.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="pictureOfActivity"
+                                                    value="sumo.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/sumo.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="pictureOfActivity"
+                                                    value="bowling.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/bowling.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="pictureOfActivity"
+                                                    value="tennis.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/tennis.png">
+                                                </input>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end Modal body -->
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <input class="btn btn-success" type="submit" id="btn" value="Tilføj"></input>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div> <!-- end Modal footer -->
+                </form>
+            </div><!-- end Content -->
+        </div>
+    </div> <!-- end Modal Create new activity -->
+
+    <!-- Modal Update activity -->
+    <div class="modal fade text-light" id="update-activity">
+        <div class="modal-dialog modal-xl">
+            <!-- Content -->
+            <div class="modal-content bg-dark">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Opret ny aktivitet</h4>
+                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"></button>
+                </div> <!-- end Modal Header -->
+                <!-- Modal body -->
+                <form class="form" id="formPut" method="PUT" enctype="multipart/form-data">
+                    <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+                        <div class="container-fluid p-5 text-white">
+                            <div class="row">
+                                <div class="col m-3">
+                                    <label for="updateTypeOfActivity" class="col">Aktivitet navn</label>
+                                    <input name="updateTypeOfActivity" id="updateTypeOfActivity"
+                                        class="form-control col" type="text"></input>
+
+                                    <label for="updateDurationOfActivity" class="col">Længden af aktiviteten
+                                        (min.)</label>
+                                    <input name="updateDurationOfActivity" id="updateDurationOfActivity"
+                                        class="form-control col" type="text"></input>
+
+                                    <label for="updateMaxAmountOfPeople" class="col">Max. antal
+                                        personer</label>
+                                    <input name="updateMaxAmountOfPeople" id="updateMaxAmountOfPeople"
+                                        class="form-control col" type="text"></input>
+
+                                    <label for="updateMinAge" class="col">aldersbegrænsning</label>
+                                    <input name="updateMinAge" id="updateMinAge" class="form-control col"
+                                        type="text"></input>
+
+                                    <label for="updateMinHeight" class="col">Højde krav</label>
+                                    <input name="updateMinHeight" id="updateMinHeight" class="form-control col"
+                                        type="text"></input>
+
+                                    <label for="updatePriceOfActivity" class="col">Pris</label>
+                                    <input name="updatePriceOfActivity" id="updatePriceOfActivity"
+                                        class="form-control col" type="text"></input>
+
+                                    <label for="updatePictureOfActivity" class="col">Billed</label>
+                                    <input name="updatePictureOfActivity" id="updatePictureOfActivity"
+                                        class="form-control col" type="text"></input>
+
+                                    <label for="updateID" class="col">ID</label>
+                                    <input name="updateID" id="updateID" class="form-control col" type="text"></input>
+
+                                    <label for="updateDescriptionOfActivity" class="col">Description</label>
+                                    <input name="updateDescriptionOfActivity" id="updateDescriptionOfActivity"
+                                        class="form-control col" type="text"></input>
+
+                                    <label for="updateMaintenanceOfActivity" class="col">Maintainenance</label>
+                                    <input name="updateMaintenanceOfActivity" id="updateMaintenanceOfActivity"
+                                        class="form-control col" type="text"></input>
+
+                                    <label for="updateRestrictionsOfActivity" class="col">Restrictions</label>
+                                    <input name="updateRestrictionsOfActivity" id="updateRestrictionsOfActivity"
+                                        class="form-control col" type="text"></input>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end Modal body -->
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <input class="btn btn-success" type="submit" id="btn" value="Tilføj"></input>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div> <!-- end Modal footer -->
+                </form>
+            </div><!-- end Content -->
+        </div>
+    </div> <!-- end Modal Update activity -->
+
+    <script src="../../static/js/dashboard/post-put-activity.js"></script>
 </body>
 
 </html>
