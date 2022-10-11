@@ -42,7 +42,7 @@ class ReservationRenderer {
                 </a>
                 </form>
                 </td>
-                </tr>`;
+                </tr>` ;
 
             target.append(table);
 
