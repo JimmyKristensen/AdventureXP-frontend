@@ -2,8 +2,8 @@
 
 class ActivityRendererPost {
     //endpoint url
-    //endpointURL = "http://localhost:8080/api/v1/activities/";
-    endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities/";
+    endpointURL = "http://localhost:8080/api/v1/activities/";
+    //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities/";
     //constructor
     constructor(data) {
         this.data = data;
@@ -47,7 +47,7 @@ class ActivityRendererPost {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(dataFromForm),
-                redirect: window.location.reload()
+                //redirect: window.location.reload()
             });
             this.data = await response.json();
             console.table(this.data);
@@ -60,6 +60,7 @@ class ActivityRendererPost {
     deleteActivity(id) {
         if (this.sureUWantToDelete()) {
             this.activityOperationData('', id, 'DELETE');
+            console.log('Delete was success');
         } else {
             console.log('Delete was cancelled');
         }
