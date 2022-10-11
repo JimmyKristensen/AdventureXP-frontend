@@ -2,8 +2,8 @@
 
 class FrontpageActivityRenderer{
     //endpoint url
-    //endpointURL = "http://localhost:8080/api/v1/activities/";
-    endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities";
+    endpointURL = "http://localhost:8080/api/v1/activities/";
+    //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities";
     
     //constructor
     constructor(data){
@@ -26,7 +26,7 @@ class FrontpageActivityRenderer{
             let target = $('#activitiespage-card');
 
             let card = `
-                <div class="card mb-3 px-0 border-black aktBox">
+                <div class="card mb-4 px-0 border-black aktBox">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="../static/media/${entry.pictureOfActivity}" class=" img-fluid aktImg" alt="...">
@@ -39,7 +39,7 @@ class FrontpageActivityRenderer{
                                     content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-end">
                                     <div class="d-inline-flex">
-                                        <a href="./aktivitet.html">
+                                        <a href="aktivitet.html">
                                             <span class="bi bi-info-circle fa-lg"></span>
                                         </a>
                                     </div>
