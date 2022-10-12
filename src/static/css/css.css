@@ -13,15 +13,17 @@ ul {
   border: 2px solid rgb(7, 7, 7);
 }
 
-.border-black-top{
-  border-top: 2px solid  rgb(7, 7, 7);
+.border-black-top {
+  border-top: 2px solid rgb(7, 7, 7);
 }
-.border-black-bottom{
-  border-bottom: 2px solid  rgb(7, 7, 7);
+
+.border-black-bottom {
+  border-bottom: 2px solid rgb(7, 7, 7);
 }
-.border-black-sides{
-  border-left: 2px solid  rgb(7, 7, 7);
-  border-right: 2px solid  rgb(7, 7, 7);
+
+.border-black-sides {
+  border-left: 2px solid rgb(7, 7, 7);
+  border-right: 2px solid rgb(7, 7, 7);
 }
 
 .label-size {
@@ -29,8 +31,8 @@ ul {
 }
 
 
-.teamImg { 
- object-fit: cover; 
+.teamImg {
+  object-fit: cover;
 }
 
 .aktGoKart {
@@ -39,37 +41,40 @@ ul {
 }
 
 /*Aktiviteter boxes*/
-.aktImg{
-  height: 100%; 
-  width: 100%; 
+.aktImg {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
-.less-rounded-end{
-  border-top-right-radius: 2px; 
+.less-rounded-end {
+  border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-.navImg{
-  min-width: 120px; 
+
+.navImg {
+  min-width: 120px;
   min-height: 80px;
-  width: 120px; 
+  width: 120px;
   height: 80px;
 }
-a{
+
+a {
   text-decoration: none;
   color: #151414;
 }
- a:hover{
+
+a:hover {
   color: #33b5e5;
   cursor: pointer;
- }
+}
 
- .aktBox {
+.aktBox {
   width: 544px;
   border-radius: 5px;
- }
+}
 
 /* FOOTER SECTION */
 .footer-section {
@@ -165,13 +170,13 @@ a{
 
 .instagram {
   color: #d6249f;
-/* 
+  /* 
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   background: #d6249f;
    */
-  
+
 }
-  
+
 
 .footer-widget-heading h3 {
   color: #fff;
@@ -286,8 +291,8 @@ a{
 
 /* Fontpage card style */
 .fontpage-card-style {
-  min-width: 275px; 
-  min-height: 170px; 
+  min-width: 275px;
+  min-height: 170px;
   object-fit: cover;
 }
 
