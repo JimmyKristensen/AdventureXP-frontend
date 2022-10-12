@@ -294,7 +294,7 @@ class ActivityRenderer {
 
 
 var reservationRendererOperation = new ReservationRendererOperation();
-var customerRendererPost = new CustomerRendererPost();
+var customerRendererOperation = new CustomerRendererOperation();
 var timeTableSlotsRendererOperation = new TimeTableSlotsRendererOperation();
 var activityRenderer = new ActivityRenderer();
 var showHideAndValid = new ShowHideAndValid();
@@ -317,7 +317,7 @@ formCustomerPostEl.addEventListener('submit', event => {
         ['email', customerDataFromForm.email]
     ]);
     const customerData = Object.fromEntries(customerEntries);
-    customerRendererPost.customerOperationData(customerData, '', 'POST');
+    customerRendererOperation.customerOperationData(customerData, '', 'POST');
 })
 
 // listening to when time table slot Post form get submitted
@@ -347,5 +347,5 @@ formReservationPostEl.addEventListener('submit', event => {
 
     const formData = new FormData(formReservationPostEl);
     const dataFromForm = Object.fromEntries(formData);
-    reservationRendererOperation.createReservation(dataFromForm, customerRendererPost.getNewId(), timeTableSlotsRendererOperation.getNewId());
+    reservationRendererOperation.createReservation(dataFromForm, customerRendererOperation.getNewId(), timeTableSlotsRendererOperation.getNewId());
 })
