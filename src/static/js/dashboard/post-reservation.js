@@ -54,7 +54,7 @@ class CustomerRendererPost {
 
 var reservationRendererPost = new ReservationRendererPost();
 var customerRendererPost = new CustomerRendererPost();
-const formEl = document.querySelector('#go-cart-reservation');
+const formEl = document.querySelector('#form-reservation');
 
 formEl.addEventListener('submit', event => {
     event.preventDefault();
