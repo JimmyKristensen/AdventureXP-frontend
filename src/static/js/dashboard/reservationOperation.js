@@ -50,7 +50,7 @@ class ReservationRendererOperation {
         ]);
         const dataEntries = Object.fromEntries(reservation);
     
-        reservationRendererOperation.reservationOperationData(dataEntries, '', 'POST');
+        this.reservationOperationData(dataEntries, '', 'POST');
     }
 
     deleteReservation(id) {
