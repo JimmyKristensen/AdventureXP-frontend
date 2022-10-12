@@ -382,3 +382,12 @@ a{
   -o-transform: translate(2px, -69px);
   -ms-transform: translate(2px, -69px);
 }
+
+
+#activitiesFormula {
+  display: none;
+}
+
+#reservationsFormula {
+  display: none;
+}
