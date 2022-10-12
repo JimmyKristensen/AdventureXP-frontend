@@ -3,7 +3,7 @@
 class ReservationRenderer {
 
     //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/reservations";
+    endpointURL = "http://localhost:8080/api/v1/reservations/";
     //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/reservations";
     //constructor
     constructor(data) {
@@ -25,23 +25,24 @@ class ReservationRenderer {
 
             let target = $('#tb-activities');
 
-            let table = `<tr>
-                <td>${entry.timeTableSlot.activity.activityId}</td>
-                <td>${entry.timeTableSlot.activity.typeOfActivity}</td>
-                <td>${entry.customer.name}</td>
-                <td>${entry.timeTableSlot.activity.durationOfActivity}</td>
-                <td>${entry.timeTableSlot.activity.maxAmountOfPeople}</td>
-                <td>
-                <a class="btn sm">Edit</a>
-                <form method="delete">
-                <a class="btn sm" href="${this.endpointURL}/delete/${entry.reservationId}">
-                <button
-                    onclick="return confirm('Er du sikker på du vil slette?')"
-                    onclick="deleteFunction(this.value)" value="${entry.reservationId}">Slet
-                </button>
-                </a>
-                </form>
-                </td>
+            let table = `
+                <tr>
+                    <td>${entry.timeTableSlot.activity.activityId}</td>
+                    <td>${entry.timeTableSlot.activity.typeOfActivity}</td>
+                    <td>${entry.customer.name}</td>
+                    <td>${entry.timeTableSlot.activity.durationOfActivity}</td>
+                    <td>${entry.timeTableSlot.activity.maxAmountOfPeople}</td>
+                    <td>
+                        <a class="btn sm">Edit</a>
+                        <!--<a class="btn sm" href="${this.endpointURL}delete/${entry.reservationId}">
+                        <button
+                            onclick="return confirm('Er du sikker på du vil slette?');">Slet
+                        </button>
+                        </a>-->
+                        <button
+                            onclick="reservationRendererPost.deleteReservation(this.value)" value="${entry.reservationId}">Slet
+                        </button>
+                    </td>
                 </tr>`  ;
 
             target.append(table);
