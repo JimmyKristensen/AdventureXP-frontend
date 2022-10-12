@@ -47,7 +47,7 @@ class ActivityRendererPost {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(dataFromForm),
-                //redirect: window.location.reload()
+                redirect: window.location.reload()
             });
             this.data = await response.json();
             console.table(this.data);
@@ -60,7 +60,7 @@ class ActivityRendererPost {
     deleteActivity(id) {
         if (this.sureUWantToDelete()) {
             this.activityOperationData('', id, 'DELETE');
-            console.log('Delete was success');
+            console.log('Delete was successful');
         } else {
             console.log('Delete was cancelled');
         }

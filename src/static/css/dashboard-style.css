@@ -22,3 +22,11 @@ input[type="radio"] {
   background-color: #2196F3;
   border: 5px solid #ffc107;
 }
+
+/* Dashboard */
+.dashboard-btn {
+  width: 200px;
+  height: 200px;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
