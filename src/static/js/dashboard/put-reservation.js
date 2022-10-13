@@ -32,13 +32,14 @@ class PutReservationRenderer {
         document.getElementById("updateEmail").value = this.data.customer.email;
 
         //let date = new Date('2000-12-17T10:10:10');
-        document.getElementById("updateDateOfTimeTableSlot").value = this.data.dateOfTimeTableSlot;
-        document.getElementById("updateTimeslot").value = this.data.timeslot;
-        document.getElementById("updateActivityId").value = this.data.activityId;
+        document.getElementById("updateDateOfTimeTableSlot").value = this.data.timeTableSlot.dateOfTimeTableSlot.split(" ")[0];
+        document.getElementById("updateTimeslot").value = this.data.timeTableSlot.dateOfTimeTableSlot.split(" ")[1];
+        document.getElementById("updateActivityId").value = this.data.timeTableSlot.activity.activityId;
         document.getElementById("updateAmountOfPeople").value = this.data.amountOfPeople;
         document.getElementById("timeTableSlotId").value = this.data.timeTableSlot.timeTableSlotId;
         document.getElementById("customerId").value = this.data.customer.customerId;
-        activityRenderer.fetchData();
+        document.getElementById("reservationId").value = this.data.reservationId;
+        putActivityRenderer.fetchData();
     }
 
     //async fetch, for Post and Put
@@ -50,7 +51,7 @@ class PutReservationRenderer {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(dataFromForm),
-                redirect: window.location.reload()
+                //redirect: window.location.reload()
             });
             this.data = await response.json();
             console.table(this.data);
@@ -62,13 +63,14 @@ class PutReservationRenderer {
 
     createReservation(dataFromForm, datacustomer, dataTimeTableSlot) {
         const reservation = new Map([
+            ['reservationId', dataFromForm.reservationId],
             ['amountOfPeople', dataFromForm.amountOfPeople],
             ['customer', datacustomer],
             ['timeTableSlot', dataTimeTableSlot]
         ]);
         const dataEntries = Object.fromEntries(reservation);
     
-        this.reservationOperationData(dataEntries, '', 'PUT');
+        this.reservationOperationData(dataEntries, dataFromForm.reservationId, 'PUT');
     }
 }
 
@@ -117,14 +119,21 @@ formReservationPutEl.addEventListener('submit', event => {
 
     // Making new entries so elements names are maching backend entries
     const entriesCustomer = new Map([
-        ['customerId', dataFromForm.customerId]
+        ['customerId', dataFromForm.customerId],
+        ['name', dataFromForm.name],
+        ['tlf', dataFromForm.tlf],
+        ['email', dataFromForm.email]
     ]);
+    dataFromForm.dateOfTimeTableSlot = dataFromForm.dateOfTimeTableSlot.split("T")[0] + ' ' + dataFromForm.timeslot;
     const customerData = Object.fromEntries(entriesCustomer);
     const entriesTimeTableSlot = new Map([
-        ['timeTableSlotId', dataFromForm.timeTableSlotId]
+        ['timeTableSlotId', dataFromForm.timeTableSlotId],
+        ['dateOfTimeTableSlot', dataFromForm.dateOfTimeTableSlot],
+        ['isReserved', putReservationRenderer.data.timeTableSlot.isReserved],
+        ['activity', putReservationRenderer.data.timeTableSlot.activity]
     ]);
-    const timeTableSlotData = Object.fromEntries(entrieentriesTimeTableSlotsCustomer);
+    const timeTableSlotData = Object.fromEntries(entriesTimeTableSlot);
 
-    
-    reservationRendererOperation.createReservation(dataFromForm, customerData, timeTableSlotData);
+    putReservationRenderer.createReservation(dataFromForm, customerData, timeTableSlotData);
+    //putReservationRenderer.createReservation(dataFromForm, putReservationRenderer.data.customer, putReservationRenderer.data.timeTableSlot);
 })
