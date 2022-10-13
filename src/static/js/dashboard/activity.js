@@ -31,7 +31,7 @@ class ActivityRenderer {
             let target = $('#dash-card');
 
             let card = `
-                <div class="col">
+                <div class="col" id="activity${entry.activityId}">
                     <div class="card mb-4 rounded-3 shadow-sm" style="max-width: 350px">
                         <div class="card-header py-3">
                             <div class="row row-cols-2">
