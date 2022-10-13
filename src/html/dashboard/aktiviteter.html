@@ -182,6 +182,21 @@
                                         type="text">
                                     </input>
 
+                                    <label for="descriptionOfActivity" class="col">Description</label>
+                                    <input name="descriptionOfActivity" id="descriptionOfActivity"
+                                        class="form-control col" type="text">
+                                    </input>
+
+                                    <label for="maintenanceOfActivity" class="col">Maintainenance</label>
+                                    <input name="maintenanceOfActivity" id="maintenanceOfActivity"
+                                        class="form-control col" type="text">
+                                    </input>
+
+                                    <label for="restrictionsOfActivity" class="col">Restrictions</label>
+                                    <input name="restrictionsOfActivity" id="restrictionsOfActivity"
+                                        class="form-control col" type="text">
+                                    </input>
+
                                     <!-- Image choice -->
                                     <div class="container-fluid px-0">
                                         <label>Vælg billed</label>
@@ -256,7 +271,7 @@
             <div class="modal-content bg-dark">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Opret ny aktivitet</h4>
+                    <h4 class="modal-title">Redigere aktivitet</h4>
                     <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"></button>
                 </div> <!-- end Modal Header -->
                 <!-- Modal body -->
@@ -267,48 +282,111 @@
                                 <div class="col m-3">
                                     <label for="updateTypeOfActivity" class="col">Aktivitet navn</label>
                                     <input name="updateTypeOfActivity" id="updateTypeOfActivity"
-                                        class="form-control col" type="text"></input>
+                                        class="form-control col" type="text">
+                                    </input>
 
-                                    <label for="updateDurationOfActivity" class="col">Længden af aktiviteten
-                                        (min.)</label>
+                                    <label for="updateDurationOfActivity" class="col">
+                                        Længden af aktiviteten (min.)
+                                    </label>
                                     <input name="updateDurationOfActivity" id="updateDurationOfActivity"
-                                        class="form-control col" type="text"></input>
+                                        class="form-control col" type="text">
+                                    </input>
 
                                     <label for="updateMaxAmountOfPeople" class="col">Max. antal
                                         personer</label>
                                     <input name="updateMaxAmountOfPeople" id="updateMaxAmountOfPeople"
-                                        class="form-control col" type="text"></input>
+                                        class="form-control col" type="text">
+                                    </input>
 
                                     <label for="updateMinAge" class="col">aldersbegrænsning</label>
                                     <input name="updateMinAge" id="updateMinAge" class="form-control col"
-                                        type="text"></input>
+                                        type="text">
+                                    </input>
 
                                     <label for="updateMinHeight" class="col">Højde krav</label>
                                     <input name="updateMinHeight" id="updateMinHeight" class="form-control col"
-                                        type="text"></input>
+                                        type="text">
+                                    </input>
 
                                     <label for="updatePriceOfActivity" class="col">Pris</label>
                                     <input name="updatePriceOfActivity" id="updatePriceOfActivity"
-                                        class="form-control col" type="text"></input>
-
-                                    <label for="updatePictureOfActivity" class="col">Billed</label>
-                                    <input name="updatePictureOfActivity" id="updatePictureOfActivity"
-                                        class="form-control col" type="text"></input>
+                                        class="form-control col" type="text">
+                                    </input>
 
                                     <label for="updateID" class="col">ID</label>
                                     <input name="updateID" id="updateID" class="form-control col" type="text"></input>
 
                                     <label for="updateDescriptionOfActivity" class="col">Description</label>
                                     <input name="updateDescriptionOfActivity" id="updateDescriptionOfActivity"
-                                        class="form-control col" type="text"></input>
+                                        class="form-control col" type="text">
+                                    </input>
 
                                     <label for="updateMaintenanceOfActivity" class="col">Maintainenance</label>
                                     <input name="updateMaintenanceOfActivity" id="updateMaintenanceOfActivity"
-                                        class="form-control col" type="text"></input>
+                                        class="form-control col" type="text">
+                                    </input>
 
                                     <label for="updateRestrictionsOfActivity" class="col">Restrictions</label>
                                     <input name="updateRestrictionsOfActivity" id="updateRestrictionsOfActivity"
-                                        class="form-control col" type="text"></input>
+                                        class="form-control col" type="text">
+                                    </input>
+
+                                    <!-- Image choice -->
+                                    <input name="updatePictureOfActivity" id="updatePictureOfActivity"
+                                        class="form-control col" type="text" hidden>
+                                    </input>
+                                    <div class="col container-fluid px-0">
+                                        <label>Vælg billed</label>
+                                        <div class="row row-cols-2">
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="updatePictureOfActivity"
+                                                    id="updatePictureOfActivity" value="gokart.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/gokart.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="updatePictureOfActivity"
+                                                    value="minigolf.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/minigolf.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="updatePictureOfActivity"
+                                                    value="paintball.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/paintball.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="updatePictureOfActivity"
+                                                    value="sumo.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/sumo.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="updatePictureOfActivity"
+                                                    value="bowling.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/bowling.png">
+                                                </input>
+                                            </label>
+
+                                            <label class="imageChecked my-2">
+                                                <input type="radio" class="radio" name="updatePictureOfActivity"
+                                                    value="tennis.png">
+                                                <img class="checkbox-image-size checkmark"
+                                                    src="../../static/media/tennis.png">
+                                                </input>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
