@@ -32,16 +32,16 @@ class ReservationRenderer {
                     <td>${entry.timeTableSlot.activity.typeOfActivity}</td>
                     <td>${entry.customer.name}</td>
                     <td>${entry.timeTableSlot.activity.durationOfActivity}</td>
-                    <td>${entry.timeTableSlot.activity.maxAmountOfPeople}</td>
+                    <td>${entry.amountOfPeople}</td>
                     <td>
-                        <a class="btn sm">Edit</a>
-                        <!--<a class="btn sm" href="${this.endpointURL}delete/${entry.reservationId}">
-                        <button
-                            onclick="return confirm('Er du sikker på du vil slette?');">Slet
+                        <button onclick="putReservationRenderer.fetchData(this.value)" 
+                            value="${entry.reservationId}" 
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-reservation">Edit
                         </button>
-                        </a>-->
                         <button
-                            onclick="reservationRendererPost.deleteReservation(this.value)" value="${entry.reservationId}">Slet
+                            onclick="reservationRendererPost.deleteReservation(this.value)" 
+                            value="${entry.reservationId}">Slet
                         </button>
                     </td>
                 </tr>`  ;
