@@ -2,109 +2,100 @@
 
 // Reservation class
 class ReservationRendererOperation {
-    //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/reservations/";
-    //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/reservations/";
 
     //constructor
     constructor(data) {
         this.data = data;
+        this.getReservations();
     }
-
     //async fetch, await response then call update
-    async fetchData(id) {
-        try {
-            let response = await fetch(this.endpointURL + id);
-            this.data = await response.json();
-            console.table(this.data);
-        } catch (error) {
-            // Could not connect, try using the last data, we saved last time we were connected to remote endpoint.
-            console.log(`Failed getting data from remote endpoint ${this.endpointURL}.`);
+    async getReservations() {
+        this.data = await utilFetch.fetchData('reservations', '');
+        this.updateUI();
+    }
+
+    //update ui elements
+    updateUI() {
+        //append data from function
+        for (let dataIndex in this.data) {
+            let entry = this.data[dataIndex];
+
+            let target = $('#tb-reservation');
+            let table = `
+                <tr id="reservations${entry.reservationId}">
+                    <td>${entry.timeTableSlot.activity.activityId}</td>
+                    <td>${entry.timeTableSlot.activity.typeOfActivity}</td>
+                    <td>${entry.customer.name}</td>
+                    <td>${entry.timeTableSlot.activity.durationOfActivity}</td>
+                    <td>${entry.amountOfPeople}</td>
+                    <td>
+                        <button onclick="reservationRendererOperation.getDataToForm(this.value)" 
+                            value="${entry.reservationId}" 
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-reservation">Edit
+                        </button>
+                        <button
+                            onclick="reservationRendererOperation.deleteReservation(this.value)" 
+                            value="${entry.reservationId}">Slet
+                        </button>
+                    </td>
+                </tr>`;
+            target.append(table);
         }
     }
 
-    //async fetch, for Post and Put
-    async reservationOperationData(dataFromForm, id, methodType) {
-        try {
-            let response = await fetch(this.endpointURL + id, {
-                method: methodType,
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dataFromForm),
-                redirect: window.location.reload()
-            });
-            this.data = await response.json();
-            console.table(this.data);
-        } catch (error) {
-            // Could not connect, try using the last data, we saved last time we were connected to remote endpoint.
-            console.log(`Failed posting data to remote endpoint ${this.endpointURL + id}.`);
-        }
+    async getDataToForm(id) {
+        this.data = await utilFetch.fetchData('reservations', id);
+        this.updateUIFormula();
     }
 
-    createReservation(dataFromForm, datacustomer, dataTimeTableSlot) {
+    //update ui elements
+    updateUIFormula() {
+        document.getElementById("updateName").value = this.data.customer.name;
+        document.getElementById("updateTlf").value = this.data.customer.tlf;
+        document.getElementById("updateEmail").value = this.data.customer.email;
+
+        //let date = new Date('2000-12-17T10:10:10');
+        document.getElementById("updateDateOfTimeTableSlot").value = this.data.timeTableSlot.dateOfTimeTableSlot.split(" ")[0];
+        document.getElementById("updateTimeslot").value = this.data.timeTableSlot.dateOfTimeTableSlot.split(" ")[1];
+        document.getElementById("updateActivityId").value = this.data.timeTableSlot.activity.activityId;
+        document.getElementById("updateAmountOfPeople").value = this.data.amountOfPeople;
+        document.getElementById("timeTableSlotId").value = this.data.timeTableSlot.timeTableSlotId;
+        document.getElementById("customerId").value = this.data.customer.customerId;
+        document.getElementById("reservationId").value = this.data.reservationId;
+    }
+
+    createReservation(dataFromForm, datacustomer, dataTimeTableSlot, methodType) {
         const reservation = new Map([
+            ['reservationId', dataFromForm.reservationId],
             ['amountOfPeople', dataFromForm.amountOfPeople],
             ['customer', datacustomer],
             ['timeTableSlot', dataTimeTableSlot]
         ]);
-        const dataEntries = Object.fromEntries(reservation);
-    
-        this.reservationOperationData(dataEntries, '', 'POST');
+        const reservationsData = Object.fromEntries(reservation);
+
+        utilFetch.operationData('reservations', reservationsData, '', methodType);
     }
 
     deleteReservation(id) {
-        if (this.sureUWantToDelete()) {
-            this.reservationOperationData('', id, 'DELETE');
-            console.log('Delete was successful');
-        } else {
-            console.log('Delete was cancelled');
-        }
-    }
-
-    sureUWantToDelete() {
-        return confirm('Er du sikker på du vil slette reservationen?');
+        utilFetch.delete('reservations', id);
+        $('#reservations' + id).remove();
     }
 }
 
 // Customer class
 class CustomerRendererPost {
-    //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/customers/";
+    // Use for the newest customer
+    customerNew;
 
     //constructor
-    constructor(data) {
-        this.data = data;
-        this.fetchData();
-    }
-
-    //async fetch, await response then call update
-    async fetchData() {
-        let response = await fetch(this.endpointURL);
-        this.data = await response.json();
-        //console.table(this.data);
-    };
-
-    //async fetch, await response then call update
-    async customerOperationData(dataFromForm, id, methodType) {
-        try {
-            let response = await fetch(this.endpointURL + id, {
-                method: methodType,
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dataFromForm)
-            });
-            this.data = await response.json();
-        } catch (error) {
-            // Could not connect, try using the last data, we saved last time we were connected to remote endpoint.
-            console.log(`Failed getting/posting data to remote endpoint ${this.endpointURL}.`);
-        }
+    constructor() {
+        this.data = utilFetch.fetchData('customers', '');
     }
 
     getNewId() {
         const customer = new Map([
-            ['customerId', this.data.customerId],
+            ['customerId', this.customerNew.customerId],
         ]);
         return Object.fromEntries(customer);
     }
@@ -112,73 +103,44 @@ class CustomerRendererPost {
 
 // TimeTableSlots class
 class TimeTableSlotsRendererOperation {
-    //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/TimeTableSlots/";
+    // Use for the newest TimeTableSlot
+    timeTableSlotsNew;
 
     //constructor
-    constructor(data) {
-        this.data = data;
-        this.fetchData();
-    }
-
-    //async fetch, await response then call update
-    async fetchData() {
-        let response = await fetch(this.endpointURL);
-        this.data = await response.json();
-        console.table(this.data);
-    };
-
-    //async fetch, await response then call update
-    async timeTableSlotOperationData(dataFromForm, id, methodType) {
-        try {
-            let response = await fetch(this.endpointURL + id, {
-                method: methodType,
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dataFromForm)
-            });
-            this.data = await response.json();
-            console.table("timeTableSlotId: " + this.data);
-        } catch (error) {
-            // Could not connect, try using the last data, we saved last time we were connected to remote endpoint.
-            console.log(`Failed getting/posting data to remote endpoint ${this.endpointURL}.`);
-        }
+    constructor() {
+        this.data = utilFetch.fetchData('TimeTableSlots', '');
     }
 
     getNewId() {
         const timeTableSlot = new Map([
-            ['timeTableSlotId', this.data.timeTableSlotId]
+            ['timeTableSlotId', this.timeTableSlotsNew.timeTableSlotId]
         ]);
         return Object.fromEntries(timeTableSlot);
     }
 }
 
 
-class ActivityRenderer{
-    //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/activities/";
-    //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities/";
+class ActivityRenderer {
 
     //constructor
-    constructor(data){
+    constructor(data) {
         this.data = data;
-        this.fetchData();
+        this.getData();
     }
     //async fetch, await response then call update
-    async fetchData(){
-        let response = await fetch(this.endpointURL);
-        this.data = await response.json();
+    async getData() {
+        this.data = await utilFetch.fetchData('activities', '');
         this.updateUI();
     }
+
     //update ui elements
-    updateUI(){
+    updateUI() {
         //append data from function
-        for(let dataIndex in this.data){
+        for (let dataIndex in this.data) {
             let entry = this.data[dataIndex];
-            
-            //let target = $('#activity-options')
-            let target = $('#activityId');
+
+            //let target = $('#activityId');
+            let target = $('select[name="activityId"]');
 
             let options = `<option value="${entry.activityId}">${entry.typeOfActivity}</option>`;
 
@@ -192,6 +154,7 @@ var customerRendererPost = new CustomerRendererPost();
 var timeTableSlotsRendererOperation = new TimeTableSlotsRendererOperation();
 var activityRenderer = new ActivityRenderer();
 
+/* Listener to POST */
 const formCustomerPostEl = document.querySelector('#formCustomerPost');
 const formTimeTableSlotPostEl = document.querySelector('#formTimeTableSlotPost');
 const formReservationPostEl = document.querySelector('#formReservationPost');
@@ -203,12 +166,14 @@ formCustomerPostEl.addEventListener('submit', event => {
     //customerRendererPost.fetchData();
     const formData = new FormData(formCustomerPostEl);
     const customerDataFromForm = Object.fromEntries(formData);
-    customerRendererPost.customerOperationData(customerDataFromForm, '', 'POST');
+
+    utilFetch.operationData('customers', customerDataFromForm, '', 'POST');
 })
 
 // listening to when time table slot Post form get submitted
 formTimeTableSlotPostEl.addEventListener('submit', event => {
     event.preventDefault();
+    customerRendererPost.customerNew = utilFetch.data;
 
     const formData = new FormData(formTimeTableSlotPostEl);
     const timeTableSlotDataFromForm = Object.fromEntries(formData);
@@ -224,14 +189,45 @@ formTimeTableSlotPostEl.addEventListener('submit', event => {
     ]);
     const timeTableSlotData = Object.fromEntries(timeTableSlot);
 
-    timeTableSlotsRendererOperation.timeTableSlotOperationData(timeTableSlotData, '', 'POST');
+    utilFetch.operationData('TimeTableSlots', timeTableSlotData, '', 'POST');
 })
 
 // listening to when reservation Post form get submitted
 formReservationPostEl.addEventListener('submit', event => {
     event.preventDefault();
-
+    timeTableSlotsRendererOperation.timeTableSlotsNew = utilFetch.data;
     const formData = new FormData(formReservationPostEl);
     const dataFromForm = Object.fromEntries(formData);
-    reservationRendererOperation.createReservation(dataFromForm, customerRendererPost.getNewId(), timeTableSlotsRendererOperation.getNewId());
+    reservationRendererOperation.createReservation(dataFromForm, customerRendererPost.getNewId(), timeTableSlotsRendererOperation.getNewId(), 'POST');
+})
+
+
+/* Listener to PUT */
+const formReservationPutEl = document.querySelector('#formReservationPut');
+
+formReservationPutEl.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const formData = new FormData(formReservationPutEl);
+    const dataFromForm = Object.fromEntries(formData);
+
+    // Making new entries so elements names are maching backend entries
+    const entriesCustomer = new Map([
+        ['customerId', dataFromForm.customerId],
+        ['name', dataFromForm.name],
+        ['tlf', dataFromForm.tlf],
+        ['email', dataFromForm.email]
+    ]);
+    dataFromForm.dateOfTimeTableSlot = dataFromForm.dateOfTimeTableSlot.split("T")[0] + ' ' + dataFromForm.timeslot;
+    const customerData = Object.fromEntries(entriesCustomer);
+    const entriesTimeTableSlot = new Map([
+        ['timeTableSlotId', dataFromForm.timeTableSlotId],
+        ['dateOfTimeTableSlot', dataFromForm.dateOfTimeTableSlot],
+        ['isReserved', putReservationRenderer.data.timeTableSlot.isReserved],
+        ['activity', putReservationRenderer.data.timeTableSlot.activity]
+    ]);
+    const timeTableSlotData = Object.fromEntries(entriesTimeTableSlot);
+
+    reservationRendererOperation.createReservation(dataFromForm, customerData, timeTableSlotData, 'PUT');
+    //putReservationRenderer.createReservation(dataFromForm, putReservationRenderer.data.customer, putReservationRenderer.data.timeTableSlot);
 })

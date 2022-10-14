@@ -11,9 +11,7 @@
   <!-- Remote JavaScripts -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
-
-  <script type="text/javascript" src="../../static/js/dashboard/reservation.js"></script>
-  <script type="text/javascript" src="../../static/js/dashboard/delete-reservation.js"></script>
+  <script type="text/javascript" src="../../static/js/util-fetch.js"></script>
 </head>
 
 <body>
@@ -128,7 +126,7 @@
                 <th scope="col">Options</th>
               </tr>
             </thead>
-            <tbody id="tb-activities"></tbody>
+            <tbody id="tb-reservation"></tbody>
           </table>
         </div>
       </main>
@@ -260,6 +258,75 @@
     </div>
   </div> <!-- end Modal Create new reservation -->
 
+  <div class="modal fade text-light" id="edit-reservation">
+    <div class="modal-dialog modal-xl">
+      <!-- Content -->
+      <div class="modal-content bg-dark">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Rediger reservation</h4>
+          <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"></button>
+        </div> <!-- end Modal Header -->
+        <!-- Modal body -->
+        <form class="form" id="formReservationPut" method="PUT">
+          <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+            <div class="container-fluid p-5 text-white">
+              <div class="row">
+                <div class="col m-3">
+                  <!--customer fields-->
+                  <label for="name" class="col">Navn</label>
+                  <input name="name" id="updateName" class="form-control col" type="text" required>
+                  </input>
+
+                  <label for="tlf" class="col">Telefon nummer</label>
+                  <input name="tlf" id="updateTlf" class="form-control col" type="text" required>
+                  </input>
+
+                  <label for="email" class="col">E-mail</label>
+                  <input name="email" id="updateEmail" class="form-control col" type="email" required>
+                  </input>
+                  <!--timetable fields-->
+                  <label for="dateOfTimeTableSlot" class="col">Dato og Tid</label>
+                  <input name="dateOfTimeTableSlot" id="updateDateOfTimeTableSlot" class="form-control col" type="date"
+                    required>
+                  </input>
+
+                  <label for="timeslot" class="form-label">Tidspunkt</label>
+                  <select class="form-select" name="timeslot" id="updateTimeslot">
+                    <option value="">Vælg...</option>
+                    <option value="08:00">klokken 8-8:30</option>
+                    <option value="09:00">klokken 9-9:30</option>
+                    <option value="10:00">klokken 10-10:30</option>
+                    <option value="11:00">klokken 11-11:30</option>
+                  </select>
+
+                  <label for="activityId" class="form-label">Aktivitet</label>
+                  <select class="form-select" name="activityId" id="updateActivityId">
+                    <option value="">Vælg...</option>
+                  </select>
+
+                  
+
+                  <label for="amountOfPeople" class="col">Antal personer</label>
+                  <input name="amountOfPeople" id="updateAmountOfPeople" class="form-control col" type="text">
+                  </input>
+
+                  <input name="timeTableSlotId" id="timeTableSlotId" hidden></input>
+                  <input name="customerId" id="customerId" hidden></input>
+                  <input name="reservationId" id="reservationId" hidden></input>
+                </div>
+              </div>
+            </div>
+          </div> <!-- end Modal body -->
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <input class="btn btn-success" type="submit" id="btn" value="Gem"></input>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div> <!-- end Modal footer -->
+        </form>
+      </div><!-- end Content -->
+    </div>
+  </div> <!-- end Modal Create new Customer -->
   <script src="../../static/js/dashboard/reservationOperation.js"></script>
 </body>
 

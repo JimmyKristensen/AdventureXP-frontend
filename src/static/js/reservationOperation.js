@@ -26,8 +26,8 @@
  */
 class ReservationRendererOperation {
     //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/reservations/";
-    //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/reservations/";
+    //endpointURL = "http://localhost:8080/api/v1/reservations/";
+    endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/reservations/";
 
     //constructor
     constructor(data) {
@@ -104,7 +104,8 @@ class ReservationRendererOperation {
  */
 class CustomerRendererOperation {
     //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/customers/";
+    //endpointURL = "http://localhost:8080/api/v1/customers/";
+    endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/customers/";
 
     //constructor
     constructor(data) {
@@ -158,7 +159,8 @@ class CustomerRendererOperation {
  */
 class TimeTableSlotsRendererOperation {
     //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/TimeTableSlots/";
+    //endpointURL = "http://localhost:8080/api/v1/TimeTableSlots/";
+    endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/TimeTableSlots/";
 
     //constructor
     constructor(data) {
@@ -209,8 +211,8 @@ class TimeTableSlotsRendererOperation {
  */
 class ActivityRenderer {
     //endpoint url
-    endpointURL = "http://localhost:8080/api/v1/activities/";
-    //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities/";
+    //endpointURL = "http://localhost:8080/api/v1/activities/";
+    endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/activities/";
 
     //constructor
     constructor(data) {
