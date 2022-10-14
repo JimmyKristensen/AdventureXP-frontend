@@ -12,7 +12,7 @@
  * 3) id: gives the endpointURL the number that is added to the end ex. the 1 is added to this url http://localhost:8080/api/v1/reservations/1.
  * 4) methodType: sets what method it is ex. "PUT"
  * 
- * And is have mehtod deleteReservation(id)
+ * And is have method deleteReservation(id)
  * It calls an another method where it will show a pop-up to the user
  * with the options "Ok" and "Annuller". 
  * When selected it will recieve a boolean from the option if "Ok" true

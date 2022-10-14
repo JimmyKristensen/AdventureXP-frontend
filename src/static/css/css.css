@@ -306,8 +306,9 @@ a:hover {
 
 /* Fontpage card style */
 .fontpage-card-style {
-  min-width: 275px;
+  min-width: 340px;
   min-height: 170px;
+  max-height: 185px;
   object-fit: cover;
 }
 
