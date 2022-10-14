@@ -33,11 +33,9 @@ class UtilFetch {
      * 3) customers
      * 4) reservations
      * @param {*} endpointChoice 
-     * @returns http://localhost:8080/api/v1/endpointChoice/
+     * @returns http://localhost:8080/api/v1/endpointChoice/ or "https://adventurexp-backend.azurewebsites.net/api/v1/endpointChoice/";
      */
     endpoints(endpointChoice) {
-        //endpointURL = "http://localhost:8080/api/v1/reservations/";
-        //endpointURL = "https://adventurexp-backend.azurewebsites.net/api/v1/reservations/";
         if (endpointChoice == 'activities') {
             //return "http://localhost:8080/api/v1/activities/";
             return "https://adventurexp-backend.azurewebsites.net/api/v1/activities/";
