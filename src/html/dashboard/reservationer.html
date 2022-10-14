@@ -11,10 +11,7 @@
   <!-- Remote JavaScripts -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
-
-  <script type="text/javascript" src="../../static/js/dashboard/reservation.js"></script>
-  <script type="text/javascript" src="../../static/js/dashboard/delete-reservation.js"></script>
-  <script type="text/javascript" src="../../static/js/dashboard/put-reservation.js"></script>
+  <script type="text/javascript" src="../../static/js/util-fetch.js"></script>
 </head>
 
 <body>
@@ -129,7 +126,7 @@
                 <th scope="col">Options</th>
               </tr>
             </thead>
-            <tbody id="tb-activities"></tbody>
+            <tbody id="tb-reservation"></tbody>
           </table>
         </div>
       </main>
@@ -314,15 +311,16 @@
                   <input name="amountOfPeople" id="updateAmountOfPeople" class="form-control col" type="text">
                   </input>
 
-                  <input name="timeTableSlotId" id="timeTableSlotId"></input>
-                  <input name="customerId" id="customerId"></input>
+                  <input name="timeTableSlotId" id="timeTableSlotId" hidden></input>
+                  <input name="customerId" id="customerId" hidden></input>
+                  <input name="reservationId" id="reservationId" hidden></input>
                 </div>
               </div>
             </div>
           </div> <!-- end Modal body -->
           <!-- Modal footer -->
           <div class="modal-footer">
-            <input class="btn btn-success" type="submit" id="btn" value="Næste"></input>
+            <input class="btn btn-success" type="submit" id="btn" value="Gem"></input>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div> <!-- end Modal footer -->
         </form>
